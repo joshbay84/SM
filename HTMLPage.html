@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>     
+        <title>Simple Matrimony</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css"/>
+        <!--<link rel="stylesheet" href="Stylesheet.css"/>-->
+    </head>
+    <body>
+
+        <div id="page" class="container">
+        <div id="changeSettingsPopup" style="display: none">
+            <table>
+            <tr><td><label>Age Preference</label> </td><td><input type="text" name="agePreference" value="25"/></td></tr>
+            <tr><td><label>Gender</label> </td><td><input type="text" name="gender" value="25"/></td></tr>
+            <tr><td><label>Religion</label> </td><td><input type="text" name="religion" value="25"/></td></tr>                                
+            <tr><td><label>Caste</label> </td><td><input type="text" name="caste" value="25"/></td></tr>
+            </table>
+            <input type="button" value="Update"/>
+        </div>
+        <div id="myprofile" class="col-md-4 ">
+               Welcome Joshua Antony!
+               <div id="profileViewHistory">
+                   <p class="viewedSummary">
+                   Your profile has been viewed 5 times in last 20 days
+                    </p>
+                   Members who viewed your profile
+                   <ul>
+                       <li><a href="">Ana,25,Christian - Catholic, Nadar</a></li>
+                       <li><a href="">Ana,25,Christian - Catholic, Nadar</a></li>
+                       <li><a href="">Ana,25,Christian - Catholic, Nadar</a></li>
+                       <li><a href="">Ana,25,Christian - Catholic, Nadar</a></li>
+                       <li><a href="">Ana,25,Christian - Catholic, Nadar</a></li>
+                   </ul>               
+               </div>
+                    
+                <div id="filterSettings">
+                    <p>Only profile with
+                        <span class="filterText">Age (25-28) , Male, Christian - Catholic, Nadar</span>
+                        can send request to you
+                    </p>
+                    <input type="button" value="Change Settings"/>
+                </div>
+        </div>       
+
+        <div id="content" class="col-md-8">
+            <div id="searchFormContainer">
+                  <form id="searchForm">
+                    <input type="text" name="searchTerm" class="searchTermBox"/>
+                    <input type="submit" name="submit" value="Find Your Match!" class="searchSubmitButton"/>
+                  </form>
+            </div>
+
+            <div id="searchResult">
+                <ul>
+                <li>Joshua Antony, 25, Christian - Catholic, Nadar, Chennai &nbsp;&nbsp;<input type="button" name="getEmail" value="Get Email!"/></li>
+                <li>Joshua Antony, 25, Christian - Catholic, Nadar, Mumbai &nbsp;&nbsp;<input type="button" name="getEmail" value="Get Email!"/></li>
+                <li>Joshua Antony, 25, Christian - Catholic, Nadar, Chennai &nbsp;&nbsp;<input type="button" name="getEmail" value="Get Email!"/></li>
+                <li>Joshua Antony, 25, Christian - Catholic, Nadar, Chennai &nbsp;&nbsp;<input type="button" name="getEmail" value="Get Email!"/></li>
+                <li>Joshua Antony, 25, Christian - Catholic, Nadar, Chennai &nbsp;&nbsp;<input type="button" name="getEmail" value="Get Email!"/></li>
+                <li>Joshua Antony, 25, Christian - Catholic, Nadar, Chennai &nbsp;&nbsp;<input type="button" name="getEmail" value="Get Email!"/></li>
+                <li>Joshua Antony, 25, Christian - Catholic, Nadar, Chennai &nbsp;&nbsp;<input type="button" name="getEmail" value="Get Email!"/></li>
+                <li>Joshua Antony, 25, Christian - Catholic, Nadar, Chennai &nbsp;&nbsp;<input type="button" name="getEmail" value="Get Email!"/></li>
+                <li>Joshua Antony, 25, Christian - Catholic, Nadar, Chennai &nbsp;&nbsp;<input type="button" name="getEmail" value="Get Email!"/></li>
+                <li>Joshua Antony, 25, Christian - Catholic, Nadar, Chennai &nbsp;&nbsp;<input type="button" name="getEmail" value="Get Email!"/></li>
+                <li>Joshua Antony, 25, Christian - Catholic, Nadar, Chennai &nbsp;&nbsp;<input type="button" name="getEmail" value="Get Email!"/></li>
+                <li>Joshua Antony, 25, Christian - Catholic, Nadar, Chennai &nbsp;&nbsp;<input type="button" name="getEmail" value="Get Email!"/></li>
+                <li>Joshua Antony, 25, Christian - Catholic, Nadar, Chennai &nbsp;&nbsp;<input type="button" name="getEmail" value="Get Email!"/></li>
+                <li>Joshua Antony, 25, Christian - Catholic, Nadar, Chennai &nbsp;&nbsp;<input type="button" name="getEmail" value="Get Email!"/></li>
+                <li>Joshua Antony, 25, Christian - Catholic, Nadar, Chennai &nbsp;&nbsp;<input type="button" name="getEmail" value="Get Email!"/></li>
+                <li>Joshua Antony, 25, Christian - Catholic, Nadar, Chennai &nbsp;&nbsp;<input type="button" name="getEmail" value="Get Email!"/></li>
+                </ul>    
+                <div id="filterResult">
+                    <b>Filter</b>
+                    <table>
+                    <tr><td class="ft">Age 25 (2)</td> <td><input type="checkbox" checked="checked"/></td></tr> 
+                    <tr><td class="ft">Age 26 (3) </td> <td><input type="checkbox" checked="checked"/></td></tr>
+                    <tr><td class="ft">Age 27 (4) </td> <td><input type="checkbox" checked="checked"/></td></tr>
+                    <tr><td class="ft">Chennai (5) </td> <td><input type="checkbox" checked="checked"/></td></tr>
+                    <tr><td class="ft">Banglore (6) </td> <td><input type="checkbox" checked="checked"/></td></tr>
+                    </table>
+                </div>      
+            </div>
+        </div>
+
+        <div id="footer"></div>
+        </div>
+
+        <script type="text/javascript" src="js/bootstrap.min.js" ></script>
+        <script type="text/javascript" src="js/jquery-1.9.1.js" ></script>
+
+    </body>
+</html>
