@@ -11,14 +11,26 @@
         <link rel="stylesheet" href="css/sm.css"/>
     </head>
     <body>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
 
         <div id="page" class="container">
 
-            <header>
-                <h1>Simple Matrimony</h1>
-                <h5>where search made simple</h5>
+            <header class="page-header">
+                <h1>Simple Matrimony <small>search made simple</small></h1>
             </header>
-
+            
+            <dialog id="dialog" style="display: none">
+              <p>Hi, I'm a dialog!</p>
+              <button id="close">Okay</button>
+            </dialog>
             <div id="changeSettingsPopup" style="display: none">
                 <table>
                 <tr><td><label>Age Preference</label> </td><td><input type="text" name="agePreference" value="25"/></td></tr>
@@ -26,29 +38,42 @@
                 <tr><td><label>Religion</label> </td><td><input type="text" name="religion" value="25"/></td></tr>                                
                 <tr><td><label>Caste</label> </td><td><input type="text" name="caste" value="25"/></td></tr>
                 </table>
-                <input type="button" value="Update"/>
+                <a href="#"> Update </a>
             </div>
 
             <div class="row">
             <aside id="myprofile" class="col-md-4 ">
-                   Welcome Joshua Antony!
+                   <h3>Joshua Antony!</h3>
                    <div id="profileViewHistory">
                        <p class="viewedSummary">
-                       Your profile has been viewed <mark>5 times</mark> in last <mark>20 days</mark>
+                       Your profile has been viewed <span class="badge">5 </span> times in last <span class="badge">20 </span> days
                         </p>
-                       Members who viewed your profile
-                       <ul>
-                           <li><a href="">Ana,25,Christian - Catholic, Caste1</a></li>
-                           <li><a href="">Ana,25,Christian - Catholic, Caste1</a></li>
-                           <li><a href="">Ana,25,Christian - Catholic, Caste1</a></li>
-                           <li><a href="">Ana,25,Christian - Catholic, Caste1</a></li>
-                           <li><a href="">Ana,25,Christian - Catholic, Caste1</a></li>
-                       </ul>               
+                       
+                       <div class="list-group">
+                           <a href="" class="list-group-item active">
+                            <h4 class="list-group-item-heading">
+                                Recent viewers of your profile                                
+                            </h4>
+                            
+                           </a>
+                           <a href="" class="list-group-item">Jayciline,25,Christian - Catholic, Caste1 <span class="badge">chat</span></a>
+                           <a href="" class="list-group-item">Jenny,25,Christian - Catholic, Caste1</a>
+                           <a href="" class="list-group-item">Joannah,25,Christian - Catholic, Caste1</a>
+                           <a href="" class="list-group-item ">Jennie,25,Christian - Catholic, Caste1 <span class="badge">chat</span></a>
+                           <a href="" class="list-group-item ">Jane,25,Christian - Catholic, Caste1 <span class="badge">chat</span> </a>
+                       </div>               
                    </div>
                     
                     <div id="profileCompleteness">
-                        Your Profile is 60% complete
-                        <progress value="60" max="100"></progress> 
+                        Profile completness
+                        <div class="progress">
+                          <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 60%;">
+                            60%
+                          </div>
+                        </div>
+                        <!--<button type="button" class="btn btn-primary btn-xs">Update</button>-->
+                        <!--<progress value="60" max="100"></progress> -->
                     </div>    
                        <br/>
                     <div id="changeSettings">
@@ -59,47 +84,56 @@
                         <input type="button" value="Change Settings" class="btn btn-primary btn-xs"/>
                             </p>
                     </div>
-
+                                    
+                    <video id="sampleMovie" src="http://www.sesamestreet.org/videos#media/video_6a6c82e2-3d79-4c85-92dc-950e8eb5de0c" controls></video>
                     
             </aside>       
 
             <section id="content" class="col-md-6">
-                <div id="searchFormContainer">
-                      <form id="searchForm">
-                        <input type="text" name="searchTerm" class="searchTermBox"/>
-                        <input type="submit" name="submit" value="Find Your Match!" class="btn btn-primary"/>
-                      </form>
-                </div>
+                <h3>Find Your Match</h3>
+                <form role="form" >
+                    <div class="form-group">                     
+                        <input type="text" name="searchTerm" class="form-control" placeholder="Example :  25-28 M Christian Fernando Mumbai"/>                    
+                    </div>
+                    <!--<button class="btn btn-primary btn-sm">Search</button>-->                      
+                </form>
 
                 <div id="searchResult">
-                    <table class="table table-hover table-condensed">
-                    <tr class="success"><td>Joshua Antony, 25, Christian - Catholic, Open, Chennai </td><td><input type="button" class="btn btn-info btn-xs" name="getEmail" value="Get Email!"/></td></tr>
-                    <tr class="success"><td>Joshua Antony, 25, Christian - Catholic, Open, Mumbai </td><td><input type="button" class="btn btn-info btn-xs" name="getEmail" value="Get Email!"/></td></tr>
-                    <tr class="success"><td>Joshua Antony, 25, Christian - Catholic, Open, Chennai </td><td><input type="button" class="btn btn-info btn-xs" name="getEmail" value="Get Email!"/></td></tr>
-                    <tr class="success"><td>Joshua Antony, 25, Christian - Catholic, Open, Chennai </td><td><input type="button" class="btn btn-info btn-xs" name="getEmail" value="Get Email!"/></td></tr>
-                    <tr class="success"><td>Joshua Antony, 25, Christian - Catholic, Open, Chennai </td><td><input type="button" class="btn btn-info btn-xs" name="getEmail" value="Get Email!"/></td></tr>
-                    <tr class="success"><td>Joshua Antony, 25, Christian - Catholic, Open, Chennai </td><td><input type="button" class="btn btn-info btn-xs" name="getEmail" value="Get Email!"/></td></tr>
-                    <tr class="success"><td>Joshua Antony, 25, Christian - Catholic, Open, Chennai </td><td><input type="button" class="btn btn-info btn-xs" name="getEmail" value="Get Email!"/></td></tr>
-                    <tr class="success"><td>Joshua Antony, 25, Christian - Catholic, Open, Chennai </td><td><input type="button" class="btn btn-info btn-xs" name="getEmail" value="Get Email!"/></td></tr>
-                    <tr class="success"><td>Joshua Antony, 25, Christian - Catholic, Open, Chennai </td><td><input type="button" class="btn btn-info btn-xs" name="getEmail" value="Get Email!"/></td></tr>
-                    <tr class="success"><td>Joshua Antony, 25, Christian - Catholic, Open, Chennai </td><td><input type="button" class="btn btn-info btn-xs" name="getEmail" value="Get Email!"/></td></tr>
-                    <tr class="success"><td>Joshua Antony, 25, Christian - Catholic, Open, Chennai </td><td><input type="button" class="btn btn-info btn-xs" name="getEmail" value="Get Email!"/></td></tr>
-                    <tr class="success"><td>Joshua Antony, 25, Christian - Catholic, Open, Chennai </td><td><input type="button" class="btn btn-info btn-xs" name="getEmail" value="Get Email!"/></td></tr>
-                    <tr class="success"><td>Joshua Antony, 25, Christian - Catholic, Open, Chennai </td><td><input type="button" class="btn btn-info btn-xs" name="getEmail" value="Get Email!"/></td></tr>
-                    
-                    </table>    
+                    <ul class="pagination pagination-sm">
+                        <li><a href="#">&laquo;</a></li>
+                        <li><a href="#">1</a></li>
+                        <li class="active"><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#">&raquo;</a></li>
+                    </ul>
+
+                    <ul class="list-group">
+                    <li class="list-group-item active">Joshua Antony, 25, Christian - Catholic, Open, Chennai <button class="btn btn-info btn-xs badge">Connect </button><button class="btn btn-info btn-xs badge">Chat </button></li>
+                    <li class="list-group-item active">Joshua Antony, 25, Christian - Catholic, Open, Mumbai <button class="btn btn-info btn-xs badge">Connect </button><button class="btn btn-info btn-xs badge">Chat </button></li>
+                    <li class="list-group-item ">Joshua Antony, 25, Christian - Catholic, Open, Chennai <button class="btn btn-info btn-xs badge">Connect </button></li>
+                    <li class="list-group-item ">Joshua Antony, 25, Christian - Catholic, Open, Chennai <button class="btn btn-info btn-xs badge">Connect </button></li>
+                    <li class="list-group-item ">Joshua Antony, 25, Christian - Catholic, Open, Chennai <button class="btn btn-info btn-xs badge">Connect </button></li>
+                    <li class="list-group-item active">Joshua Antony, 25, Christian - Catholic, Open, Chennai <button class="btn btn-info btn-xs badge">Connect </button><button class="btn btn-info btn-xs badge">Chat </button></li>
+                    <li class="list-group-item ">Joshua Antony, 25, Christian - Catholic, Open, Chennai <button class="btn btn-info btn-xs badge">Connect </button></li>                    
+                    <li class="list-group-item active">Joshua Antony, 25, Christian - Catholic, Open, Chennai <button class="btn btn-info btn-xs badge">Connect </button><button class="btn btn-info btn-xs badge">Chat </button></li>                    
+                    </ul>    
                       
                 </div>
             </section>
-            <aside id="filterResult" class="col-md-2">
-                <b>Filter</b>
-                <table>
-                <tr><td class="ft">Age 25 (2)</td> <td><input type="checkbox" checked="checked"/></td></tr> 
-                <tr><td class="ft">Age 26 (3) </td> <td><input type="checkbox" checked="checked"/></td></tr>
-                <tr><td class="ft">Age 27 (4) </td> <td><input type="checkbox" checked="checked"/></td></tr>
-                <tr><td class="ft">Chennai (5) </td> <td><input type="checkbox" checked="checked"/></td></tr>
-                <tr><td class="ft">Banglore (6) </td> <td><input type="checkbox" checked="checked"/></td></tr>
-                </table>
+            <aside class="col-md-2">  
+                <div class="fb-like" style="margin-top: 130px; margin-bottom: 105px;" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>              
+                <div>    
+                    <h4>Filter</h4>
+                    <ul class="list-group">
+                        <li class="list-group-item">Age 25 (2) &nbsp;<input type="checkbox" /></li> 
+                        <li class="list-group-item">Age 26 (3)  &nbsp; <input type="checkbox" /></li>
+                        <li class="list-group-item">Age 27 (4)  &nbsp; <input type="checkbox" /></li>
+                        <li class="list-group-item">Chennai (5)  &nbsp; <input type="checkbox" /></li>
+                        <li class="list-group-item">Banglore (6)  &nbsp;<input type="checkbox" /></li>
+                        </ul>
+                </div>                
             </aside>
             </div>
             <footer>
